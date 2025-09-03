@@ -1,0 +1,17 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="auth-container">
+    <h2>Sign Up</h2>
+    <form method="post" action="{% url 'accounts:signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Sign Up" />
+    </form>
+    <p>
+        Already have an account? <a href="{% url 'accounts:login' %}">Login Here!</a>
+    </p>
+</div>
+
+{% endblock %}

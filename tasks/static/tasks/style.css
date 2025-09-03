@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    color: #333;
+}
+
+
+h1, h3 {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Layout ===== */
+nav {
+    background: #4a90e2;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;                /* Enable flexbox */
+    justify-content: space-between; /* Left & right alignment */
+    align-items: center;          /* Vertically center */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+nav h1 {
+    margin: 0; /* Remove default margin */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* space between items */
+}
+
+.logout-form {
+    display: inline; /* keep button inline */
+}
+
+.btn.btn-secondary, 
+.logout-form button {
+    background: white;
+    color: #4a90e2;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn.btn-secondary:hover, 
+.logout-form button:hover {
+    background: #f0f0f0;
+}
+
+main {
+    max-width: 700px;
+    margin: 6rem auto 2rem auto;  /* pushed down from 2rem → 6rem */
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+/* ===== Forms ===== */
+form label {
+    display: block;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+input[type="text"], textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+input[type="text"]:focus, textarea:focus {
+    border-color: #4a90e2;
+}
+input[type="submit"], .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+input[type="submit"] {
+    background: #4a90e2;
+    color: white;
+}
+input[type="submit"]:hover {
+    background: #357ABD;
+}
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+.btn-danger:hover {
+    background: #c0392b;
+}
+.btn-secondary {
+    background: #bdc3c7;
+    color: white;
+}
+.btn-secondary:hover {
+    background: #95a5a6;
+}
+
+/* ===== Task List ===== */
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #f9fafc;
+    margin: 0.8rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.task-info {
+    flex: 1;
+}
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+strike {
+    color: gray;
+}
+
+/* ===== Auth Pages (Login & Signup) ===== */
+.auth-container {
+    max-width: 400px;
+    margin: 6rem auto 2rem auto; /* centers the form */
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 1rem;
+    color: #4a90e2;
+}
+
+.auth-container form {
+    text-align: left;
+}
+
+.auth-container label {
+    font-weight: 600;
+    margin-top: 1rem;
+    display: block;
+}
+
+.auth-container input[type="text"],
+.auth-container input[type="password"],
+.auth-container input[type="email"] {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.auth-container input:focus {
+    border-color: #4a90e2;
+}
+
+.auth-container input[type="submit"] {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+.auth-container p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.auth-container a {
+    color: #4a90e2;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.auth-container a:hover {
+    color: #357ABD;
+}

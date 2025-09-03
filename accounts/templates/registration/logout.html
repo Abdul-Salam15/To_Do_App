@@ -1,0 +1,11 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block content %}
+
+<form action="{% url 'accounts:logout' %}" method="post" >
+    {% csrf_token %}
+    <input type="submit" value="Logout" />
+    <input type="hidden" name="next" value="{% url 'accounts:login' %}" />
+</form>
+
+{% endblock %}

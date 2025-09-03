@@ -1,0 +1,31 @@
+{% extends 'tasks/base.html' %}
+{% load static %}
+{% block content %}
+<h2>Create a New Task Group</h2>
+<form action="{% url 'tasks:home' %}" method="post">
+    {% csrf_token %}
+    <label>Title: {{ form.title }}</label>
+    <input type="submit" value="Create List">
+</form>
+
+<hr>
+
+<h2>My Task List</h2>
+<ul>
+    {% for list in lists %}
+    <li>
+        <div class="task-info">
+            <h3>{{ list }}</h3> 
+            <p>{{ list.created_at }}</p>            
+        </div>
+        <div class="task-actions">
+            <a class="btn btn-view" href="{% url 'tasks:tasks' list.id%}">View</a>
+            <a class="btn btn-update" href="{% url 'tasks:update_list' list.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'tasks:delete_list' list.id %}">Delete</a>
+        </div>
+    </li>
+    {% empty %}
+    <li>No task groups available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

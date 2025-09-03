@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}?v=2">
+    <title>To Do List App</title>
+</head>
+<body>
+    <nav>
+    <div class="nav-left">
+        <h1>📝 To Do App</h1>
+    </div>
+    <div class="nav-right">
+        <span>Hello, <strong>{{ user.username|default:"Guest" }}! 👋🏾</strong></span>
+
+        {% if user.is_authenticated %}
+            <form method="post" action="{% url 'accounts:logout' %}" class="logout-form">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        {% else %}
+            <a class="btn btn-secondary" href="{% url 'accounts:login' %}">Login</a>
+            <a class="btn btn-secondary" href="{% url 'accounts:signup' %}">Sign Up</a>
+        {% endif %}
+    </div>
+</nav>
+
+    <main>
+        
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

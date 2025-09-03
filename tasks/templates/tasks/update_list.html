@@ -1,0 +1,11 @@
+{% extends 'tasks/base.html' %}
+{% load static %}
+{% block content %}
+<h2>Update List</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Update List">
+    <a class="btn btn-secondary" href="{% url 'tasks:home' %}">Back to Home Page</a>
+</form>
+{% endblock %}
