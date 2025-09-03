@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-ve=wg-5bc57)08@582*dz3as893)+yu@%)52zumdv8@yd-c=7d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['to-do-app-yrst.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -117,12 +118,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 import os
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
@@ -133,3 +136,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "tasks:home"
 LOGOUT_REDIRECT_URL = "accounts:login"
 LOGIN_URL = "accounts:login"
+
+SECRET_KEY = "taj@1yzhwxr0h@2pcl!780l&%szz=prmhb!3bm0um@jtnl#3*f"
+DEBUG = False
